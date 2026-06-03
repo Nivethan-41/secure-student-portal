@@ -74,7 +74,7 @@ const Login = () => {
                   onChange={handleChange} 
                 />
               </div>
-              <button type="submit" className="btn btn-primary w-100" disabled={loading}>
+              <button type="submit" className="btn btn-primary w-100 hover-btn mt-4 mb-3" disabled={loading}>
                 {loading ? (
                   <><span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Authenticating...</>
                 ) : 'Login'}

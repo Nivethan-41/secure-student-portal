@@ -7,7 +7,6 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Future step: Validate token and load user on app start
     setLoading(false);
   }, []);
 

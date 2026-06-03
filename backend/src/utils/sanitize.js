@@ -1,11 +1,5 @@
 const DOMPurify = require('isomorphic-dompurify');
 
-/**
- * Recursively sanitizes strings within an object, array, or string 
- * using DOMPurify to prevent XSS attacks.
- * @param {*} data - The data to sanitize
- * @returns {*} The sanitized data
- */
 const sanitizeOutput = (data) => {
   if (typeof data === 'string') {
     return DOMPurify.sanitize(data);

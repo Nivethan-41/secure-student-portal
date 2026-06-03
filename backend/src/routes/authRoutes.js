@@ -3,13 +3,12 @@ const router = express.Router();
 const authController = require('../controllers/authController');
 const rateLimit = require('express-rate-limit');
 
-// Configure Rate Limiter: max 5 requests per minute
 const authLimiter = rateLimit({
-  windowMs: 60 * 1000, // 1 minute
-  max: 5, // Limit each IP to 5 requests per windowMs
+  windowMs: 60 * 1000,
+  max: 5,
   message: { error: 'Too many requests from this IP. Please try again after a minute.' },
-  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+  standardHeaders: true,
+  legacyHeaders: false,
 });
 
 router.post('/register', authLimiter, authController.register);

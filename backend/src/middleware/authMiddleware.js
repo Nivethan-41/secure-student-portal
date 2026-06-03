@@ -9,7 +9,7 @@ const requireAuth = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // Will contain userId and role from our authController login payload
+    req.user = decoded;
     next();
   } catch (error) {
     return res.status(401).json({ error: 'Unauthorized. Invalid or expired token.' });

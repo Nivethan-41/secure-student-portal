@@ -9,17 +9,14 @@ const ProtectedRoute = ({ children, requiredRole }) => {
     return <div className="page-container"><p>Authenticating...</p></div>;
   }
 
-  // Not logged in
   if (!user) {
     return <Navigate to="/login" replace />;
   }
 
-  // Logged in but missing required role (e.g. attempting to access Admin page)
   if (requiredRole && user.role !== requiredRole) {
     return <Navigate to="/dashboard" replace />;
   }
 
-  // Authorized
   return children;
 };
 

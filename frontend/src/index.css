@@ -17,3 +17,11 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.hover-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
+}

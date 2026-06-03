@@ -71,7 +71,7 @@ const Register = () => {
                 <label className="form-label">Confirm Password</label>
                 <input type="password" name="confirmPassword" className="form-control" value={formData.confirmPassword} onChange={handleChange} />
               </div>
-              <button type="submit" className="btn btn-primary w-100" disabled={loading}>
+              <button type="submit" className="btn btn-primary w-100 hover-btn mt-4 mb-3" disabled={loading}>
                 {loading ? 'Registering...' : 'Register'}
               </button>
             </form>
