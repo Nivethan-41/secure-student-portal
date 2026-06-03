@@ -35,6 +35,10 @@ app.use(cookieParser());
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 
+app.get('/', (req, res) => {
+  res.send('Secure Student Portal API is running!');
+});
+
 app.get('/health', async (req, res) => {
   try {
     const result = await sql`SELECT NOW()`;

@@ -10,7 +10,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchLogs = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/user/logs', { credentials: 'include' });
+        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/user/logs`, { credentials: 'include' });
         const data = await response.json();
         if (!response.ok) throw new Error(data.error);
         setLogs(data.logs);
