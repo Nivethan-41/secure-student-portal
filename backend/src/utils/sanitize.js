@@ -1,8 +1,8 @@
-const DOMPurify = require('isomorphic-dompurify');
+const xss = require('xss');
 
 const sanitizeOutput = (data) => {
   if (typeof data === 'string') {
-    return DOMPurify.sanitize(data);
+    return xss(data);
   }
   if (Array.isArray(data)) {
     return data.map(item => sanitizeOutput(item));
