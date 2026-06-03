@@ -12,6 +12,8 @@ const PORT = process.env.PORT || 5000;
 
 const allowedOrigins = [
   process.env.FRONTEND_URL,
+  process.env.VITE_API_URL, // In case it's set under this name
+  'https://secure-student-portal.vercel.app', // Explicitly allow your frontend
   'http://localhost:5173',
   'http://localhost:3000'
 ].filter(Boolean);
